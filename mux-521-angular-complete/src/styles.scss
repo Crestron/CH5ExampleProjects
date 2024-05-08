@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+@import "buttons";
+@import "mixins";
+@import "variables";
+
+/* Targeting all elements */
+* {
+  /* This will make the box model to include padding and border */
+  box-sizing: border-box;
+  /* This will stop the user from selecting any elements */
+  @include user-select(none);
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+}
+
+body,
+html {
+  aspect-ratio: 16 / 10;
+  background-image: url('./assets/images/backgrounds/background.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: Arial;
+  font-size: max(1.25vw, 3px);
+  margin: unset;
+  padding: unset;
+  overflow: hidden;
+  width: max(100vw, 240px);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+  .content {
+    align-items: center;
+    display: flex;
+    flex: 1 0 0;
+    min-height: 0px;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .title {
+    height: 2rem;
+    width: 100%;
+  }
+}
+
+.text-highlight {
+  color: #FFF400;
+}

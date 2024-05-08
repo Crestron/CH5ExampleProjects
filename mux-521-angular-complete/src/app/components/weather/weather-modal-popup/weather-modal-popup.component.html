@@ -1,0 +1,237 @@
+@if(active()) {
+    <div class="weather-app" @fadeIn @fadeOut (click)="close()">
+      <div class="weather-app__container" (click)="$event.stopPropagation();" (pointerdown)="open();">
+        <div class="weather-app__current">
+          <span class="weather-app__current--title">
+            {{ city }}
+          </span>
+    
+          <div class="weather-app__current-forecast">
+            <div class="weather-app__current-forecast--icon">
+              <img [src]="'assets/weather/conditions/' + weatherData.current.weather[0].id + 'd.webp'" />
+            </div>
+    
+            <div class="weather-app__current-forecast__detail">
+              <span class="weather-app__current-forecast__detail--description">
+                {{ weatherData.current.weather[0].description }}</span
+              >
+    
+              <div class="weather-app__current-forecast__stats">
+                <span
+                  >{{ weatherData.current.temp | number : "1.0-0" }}&deg;</span
+                >
+    
+                <div class="weather-app__current-forecast__stats--column">
+                  <div class="weather-app__current-forecast__stats--row">
+                    <img src="./assets/weather/icons/maximum-temperature.svg" />
+                    <span
+                      >{{
+                        weatherData.daily[0].temp.max | number : "1.0-0"
+                      }}&deg;</span
+                    >
+                  </div>
+                  <div class="weather-app__current-forecast__stats--row">
+                    <img src="./assets/weather/icons/minimum-temperature.svg" />
+                    <span
+                      >{{
+                        weatherData.daily[0].temp.min | number : "1.0-0"
+                      }}&deg;</span
+                    >
+                  </div>
+                </div>
+    
+                <div class="weather-app__current-forecast__stats--column">
+                  <div class="weather-app__current-forecast__stats--row">
+                    <img src="./assets/weather/icons/umbrella.svg" />
+                    <span
+                      >{{ weatherData.daily[0].pop * 100 | number : "1.0-0" }}%
+                    </span>
+                  </div>
+                  <div class="weather-app__current-forecast__stats--row">
+                    <img src="./assets/weather/icons/humidity.svg" />
+                    <span
+                      >{{ weatherData.current.humidity | number : "1.0-0" }}%
+                    </span>
+                  </div>
+                </div>
+    
+                <div class="weather-app__current-forecast__stats--column">
+                  <div class="weather-app__current-forecast__stats--row">
+                    <img src="./assets/weather/icons/wind.svg" />
+                    <span
+                      >{{ weatherData.current.wind_speed | number : "1.0-0" }}
+                      <small>mph</small></span
+                    >
+                  </div>
+                  <div class="weather-app__current-forecast__stats--row">
+                    <img
+                      [style.transform]="'rotate(' + weatherData.current.wind_deg + 'deg)'"
+                      src="./assets/weather/icons/compass.svg"
+                    />
+                    <!-- We are using a custom pipe called heading to change the wind direction to a compass heading -->
+                    <span>{{ weatherData.current.wind_deg | heading }}</span>
+                  </div>
+                </div>
+    
+                <div class="weather-app__current-forecast__stats--column">
+                  <div class="weather-app__current-forecast__stats--row">
+                    <img src="./assets/weather/icons/cloud.svg" />
+                    <span
+                      >{{ weatherData.current.clouds | number : "1.0-0" }}%</span
+                    >
+                  </div>
+                  <div class="weather-app__current-forecast__stats--row">
+                    <img src="./assets/weather/icons/pressure.svg" />
+                    <span>
+                      {{ weatherData.current.pressure | number : "1.0-0" }}
+                    </span>
+                  </div>
+                </div>
+    
+                <div class="weather-app__current-forecast__stats--column">
+                  <div class="weather-app__current-forecast__stats--row">
+                    <img src="./assets/weather/icons/sunrise.svg" />
+                    <span>{{
+                      weatherData.current.sunrise * 1000 | date : "HH:mm"
+                    }}</span>
+                  </div>
+                  <div class="weather-app__current-forecast__stats--row">
+                    <img src="./assets/weather/icons/sunset.svg" />
+                    <span>{{
+                      weatherData.current.sunset * 1000 | date : "HH:mm"
+                    }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     <div style="display:grid">
+        @switch(currentForecast()) { @case(Forecast.daily) {
+        <ul id="daily-forecast-pane" class="weather-panes" @fadeIn @fadeOut>
+          @for (forecast of weatherData.daily; track $index) {
+          <li class="weather-panes__item">
+            <div class="weather-panes__item--title">
+              {{ $index === 0 ? "Today" : (forecast.dt * 1000 | date : "EE") }}
+            </div>
+            <div class="weather-panes__item--icon">
+              <img
+                [src]="
+                  './assets/weather/conditions/' + forecast.weather[0].id + 'd.webp'
+                "
+              />
+            </div>
+            <span class="weather-panes__item--description">{{
+              forecast.weather[0].main
+            }}</span>
+            <div class="weather-panes__item--divider"></div>
+    
+            <div class="weather-panes__item__detail">
+              <div class="weather-panes__item__detail--row">
+                <div class="weather-panes__item__detail--value">
+                  <img src="./assets/weather/icons/maximum-temperature.svg" />
+                  <span>{{ forecast.temp.max | number : "1.0-0" }}&deg;</span>
+                </div>
+    
+                <div class="weather-panes__item__detail--value fade">
+                  <img src="./assets/weather/icons/minimum-temperature.svg" />
+                  <span>{{ forecast.temp.min | number : "1.0-0" }}&deg;</span>
+                </div>
+              </div>
+              <div class="weather-panes__item__detail--value">
+                <img
+                  class="weather-panes__item--small-icon"
+                  src="./assets/weather/icons/umbrella.svg"
+                />
+                <span>{{ forecast.pop * 100 | number : "1.0-0" }}%</span>
+              </div>
+    
+              <div class="weather-panes__item__detail--value">
+                <img
+                  class="weather-panes__item--small-icon"
+                  [style.transform]="'rotate(' + forecast.wind_deg + 'deg)'"
+                  src="./assets/weather/icons/compass.svg"
+                />
+                <span
+                  >{{ forecast.wind_speed | number : "1.0-0" }}
+                  <small>mph</small></span
+                >
+              </div>
+            </div>
+          </li>
+          } @empty { }
+        </ul>
+        } @case(Forecast.hourly) {
+        <ul id="hourly-forecast-pane" class="weather-panes" @fadeIn @fadeOut>
+          @for (forecast of weatherData.hourly; track $index) {
+          <li class="weather-panes__item">
+            <div class="weather-panes__item--title">
+              {{ forecast.dt * 1000 | date : "HH:mm" }}
+            </div>
+            <div class="weather-panes__item--icon">
+              <img
+                [src]="
+                  './assets/weather/conditions/' + forecast.weather[0].id + 'd.webp'
+                "
+              />
+            </div>
+            <span class="weather-panes__item--description">{{
+              forecast.weather[0].main
+            }}</span>
+            <div class="weather-panes__item--divider"></div>
+    
+            <div class="weather-panes__item__detail">
+              <div class="weather-panes__item__detail--row">
+                <div class="weather-panes__item__detail--value">
+                  <img src="./assets/weather/icons/maximum-temperature.svg" />
+                  <span>{{ forecast.temp | number : "1.0-0" }}&deg;</span>
+                </div>
+    
+                <div class="weather-panes__item__detail--value">
+                  <img src="./assets/weather/icons/cloud.svg" />
+                  <span>{{ forecast.clouds | number : "1.0-0" }}%</span>
+                </div>
+              </div>
+              <div class="weather-panes__item__detail--value">
+                <img
+                  class="weather-panes__item--small-icon"
+                  src="./assets/weather/icons/umbrella.svg"
+                />
+                <span>{{ forecast.pop * 100 | number : "1.0-0" }}%</span>
+              </div>
+    
+              <div class="weather-panes__item__detail--value">
+                <img
+                  class="weather-panes__item--small-icon"
+                  [style.transform]="'rotate(' + forecast.wind_deg + 'deg)'"
+                  src="./assets/weather/icons/compass.svg"
+                />
+                <span
+                  >{{ forecast.wind_speed | number : "1.0-0" }}
+                  <small>mph</small></span
+                >
+              </div>
+            </div>
+          </li>
+          } @empty { }
+        </ul>
+        } }
+      </div>
+    
+    <div class="weather-app__forecast-selector">
+      <button class="weather-app__forecast-selector--button" [class.selected]="currentForecast()=== Forecast.daily" (click)="selectForecast(Forecast.daily)">daily</button>
+      <div class="weather-app__forecast-selector--divider"  ></div>
+      <button class="weather-app__forecast-selector--button" [class.selected]="currentForecast()=== Forecast.hourly" (click)="selectForecast(Forecast.hourly)">hourly</button>
+    </div>
+    
+    
+        <button class="close-button" (click)="close()">
+          <img
+            class="weather-app__header--icon"
+            src="./assets/images/icons/navigation/cancel.svg"
+          />
+        </button>
+      </div>
+    </div>
+    }
+    

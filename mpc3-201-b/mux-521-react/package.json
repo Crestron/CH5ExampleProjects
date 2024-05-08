@@ -1,0 +1,51 @@
+{
+  "name": "mux-521-react-mpc",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@crestron/ch5-crcomlib": "^2.8.0",
+    "@crestron/ch5-webxpanel": "^2.8.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.89",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "5.0.1",
+    "sass": "^1.72.0",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:archive": "ch5-cli archive -c src/config/contract.cse2j -p mux-521-react-mpc -d dist/my-first-ch5-app/browser -o archive",
+    "compile": "npm run build && npm run build:archive",
+    "build:deploy": "ch5-cli deploy -H 0.0.0.0 -t touchscreen archive/ mux-521-react-mpc.ch5z",
+    "build:deployweb": "ch5-cli deploy -H 0.0.0.0 -p -t web archive/ mux-521-react-mpc.ch5z"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

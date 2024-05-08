@@ -1,0 +1,70 @@
+@if(visible()) {
+<div class="weather-widget" @fadeIn (click)="open()">
+  <div class="weather-widget__forecast">
+    <div class="forecast__row">
+      <div class="forecast__item">
+        <img
+          class="forecast__icon"
+          src="assets/weather/icons/temperature.svg"
+        />
+        <span class="forecast__label"
+          >{{ weatherData().current.temp | number : "1.0-0" }}&deg;</span
+        >
+      </div>
+      <div class="divider"></div>
+      <span class="weather-widget__description">
+        {{ weatherData().current.weather[0].description }}</span
+      >
+    </div>
+    <div class="forecast__row">
+      <div class="forecast__item">
+        <img class="forecast__icon" src="assets/weather/icons/umbrella.svg" />
+        <span class="forecast__label">
+          {{ weatherData().daily[0].pop * 100 | number : "1.0-0" }}%</span
+        >
+      </div>
+      <div class="divider"></div>
+      <div class="forecast__item">
+        <img class="forecast__icon" src="assets/weather/icons/wind.svg" />
+        <span class="forecast__label"
+          >{{ weatherData().current.wind_speed | number : "1.0-0" }}
+          <small>mph</small></span
+        >
+      </div>
+      <div class="divider"></div>
+      <div class="forecast__item">
+        <img
+          class="compass__icon"
+          [style.transform]="compassStyle()"
+          src="./assets/weather/icons/compass.svg"
+        />
+        <!-- We are using a custom pipe called heading to change the wind direction to a compass heading -->
+        <span class="forecast__label">{{
+          weatherData().current.wind_deg | heading
+        }}</span>
+      </div>
+    </div>
+  </div>
+  <img
+    class="weather-widget__forecast-icon"
+    [src]="
+      'assets/weather/conditions/' +
+      weatherData().current.weather[0].id +
+      'd.webp'
+    "
+  />
+
+  <!--  Alternatively, you can use the offical OpenWeatherMap icons from their website.
+  <img
+    class="weather-widget__forecast-icon"
+    [src]="'https://openweathermap.org/img/wn/' + icon + '.png'"
+  />
+  -->
+</div>
+
+<app-weather-modal-popup
+  #modalPopup
+  [weatherData]="weatherData()"
+  [city]="city"
+/>
+}

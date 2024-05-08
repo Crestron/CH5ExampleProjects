@@ -1,0 +1,79 @@
+.source-button {
+  @include unset-button-properties;
+  @include full-size;
+  @include display-flex-center;
+
+  font-size: 1.6rem;
+  color: $off-white;
+
+  img {
+    width: 80%;
+    filter: invert(100%);
+    opacity: 0.9;
+
+  }
+
+  &.selected {
+    filter: blur(0.04rem);
+    color: $button-active-colour;
+
+    img {
+      filter: invert(21%) sepia(69%) saturate(3770%) hue-rotate(223deg) brightness(100%) contrast(100%);
+    }
+  }
+}
+
+.power-button {
+  @include unset-button-properties;
+  @include display-flex-center;
+  padding: 0.9rem;
+  border-radius: 0.5rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  background: rgba(255, 255, 255, 0.9);
+  transition: background 0.3s, opacity ease-in-out;
+  img {
+    @include full-size;
+  }
+
+  &.selected {
+    background: $button-active-colour;
+  }
+
+  &.busy {
+    opacity: 0.8;
+    animation: background-keyframes 1.2s infinite ease-in-out;
+  }
+}
+
+@keyframes background-keyframes {
+  0% {
+    background-color: $button-active-colour;
+  }
+
+  50% {
+    background-color: $off-white;
+  }
+
+  100% {
+    background-color: $button-active-colour;
+  }
+}
+
+.volume-button {
+  @include unset-button-properties;
+  @include display-flex-center;
+  width: 3.4rem;
+  height: 3.4rem;
+  color: $off-white;
+  padding: 1rem;
+  transition: opacity 0.2s;
+
+  img {
+    @include full-size;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}

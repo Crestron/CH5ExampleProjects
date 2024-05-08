@@ -1,0 +1,81 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.o-pad {
+  // @include full-size;
+  aspect-ratio: 1 / 1;
+  background: lightgrey;
+  border: solid 0.5rem lightgrey;
+  border-radius: 100%;
+  display: grid;
+  grid-template: 1fr / 1fr;
+
+  overflow: hidden;
+  position: relative;
+
+
+  &__button {
+    @include clear-button-styling;
+
+    background-color: $button-background;
+
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+
+    clip-path: polygon(31% 0, 50% 48%, 69% 0);
+
+    &--up {
+      transform: none;
+    }
+
+    &--up-left {
+      transform: rotate(315deg);
+    }
+
+    &--up-right {
+      transform: rotate(45deg);
+    }
+
+    &--down {
+      transform: rotate(180deg);
+    }
+
+    &--left {
+      transform: rotate(270deg);
+    }
+
+    &--down-left {
+      transform: rotate(225deg);
+    }
+
+    &--down-right {
+      transform: rotate(135deg);
+    }
+
+    &--right {
+      transform: rotate(90deg);
+    }
+
+
+    img {
+      margin-bottom: 80%;
+      width: 8%;
+    }
+
+    &--centre {
+      clip-path: none;
+      left: 20%;
+      top: 20%;
+      position: absolute;
+      border: solid 0.5rem lightgrey;
+      width: 60%;
+      height: 60%;
+      border-radius: 100%;
+      font-size: 100%;
+    }
+
+    &:active {
+      background: radial-gradient(circle, rgb(0, 140, 233) 0%, $button-background 90%);
+    }
+  }
+}

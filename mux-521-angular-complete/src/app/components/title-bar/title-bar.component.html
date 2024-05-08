@@ -1,0 +1,11 @@
+<div class="title-bar">
+  <button class="title-bar__button--power" (click)="powerClicked()">
+    <img
+      class="title-bar__button--power__icon"
+      src="assets/images/icons/power.svg"
+    />
+  </button>
+  <div class="title-bar__divider"></div>
+  <span class="title-bar__room-name">{{ title() }}</span>
+  <app-weather class="title-bar__weather"></app-weather>
+</div>

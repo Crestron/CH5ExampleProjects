@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@import "variables";
+@import "mixins";
+@import "buttons";
+//@import "assets/scss/menu-bar";
+
+// Global CSS
+* {
+  // Include user-select(none) mixin.
+  @include user-select(none);
+  // Set the box sizing for all items.
+  box-sizing: border-box;
+}
+
+.app {
+  @include full-size;
+  @include display-flex-row;
+  justify-content: center;
+  text-align: center;
+}
+
+html,
+body {
+  // unset the default margin / padding.
+  @include unset-margin-padding;
+  // set the font colour to white.
+  color: white;
+
+  font-family: Arial;
+
+  // Set to the smallest touchpanel
+  min-width: $minimum-width;
+  // Set the minimum height to 16:10, but to shrink
+  min-height: $minimum-width;
+  // using max rather than aspect-ratio as unsupported on TSW-xx60 series.
+  height: max(#{$minimum-width}, 100vh);
+
+  font-size: clamp(6px, 1.25vw, 2vh);
+
+  background: linear-gradient(to bottom right, #537895 0%, #09203f 100%);
+}
+
+// Media query.0
+@media (orientation: portrait) {
+
+  html,
+  body {
+    font-size: clamp(6px, 1.25vh, 2vw);
+  }
+}

@@ -1,0 +1,273 @@
+@import '../../styles/mixins';
+
+.weather-widget {
+  height: 100%;
+  display: flex;
+
+  .weather-widget__forecast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+    font-size: 1.5rem;
+  }
+
+  .weather-widget__description {
+    text-transform: capitalize;
+  }
+
+  .forecast__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.35rem;
+
+    .forecast__icon {
+      height: 1.5rem;
+    }
+
+    .forecast__item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.25rem;
+    }
+  }
+
+  .weather-widget__forecast-icon {
+    height: 100%;
+    margin-left: -0.4rem;
+  }
+
+  .divider {
+    height: 85%;
+    border-right: solid rgba(255, 255, 255, 0.8) 1px;
+  }
+
+  .compass__icon {
+    transition: transform 2s ease-in-out;
+    height: 1.5rem;
+  }
+}
+
+
+/// SHHHH NOTHING TO SEE HERE!!!!
+/// Ok well maybe something to see later on.
+.weather-app {
+  @include absolute-full-screen;
+  @include center;
+
+  backdrop-filter: blur(0.25rem);
+  filter: drop-shadow(1rem 1rem 0.5rem rgba(0, 0, 0, 0.3));
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 2;
+
+  &__container {
+    @include display-flex-column;
+    position: relative;
+
+    border-radius: 1.2rem;
+    padding: 1.5rem;
+    width: 70%;
+    border: solid 0.125rem rgba(255, 255, 255, 0.8);
+    background: url('../../../public/weather/backgrounds/lightning.webp');
+    background-size: cover;
+  }
+
+  &__current {
+    @include display-flex-column;
+    border-bottom: solid 0.0625rem rgba(255, 255, 255, 0.8);
+    padding-bottom: 1rem;
+    gap: 0.5rem;
+
+    &--title {
+      font-size: 4rem;
+      border-bottom: solid 0.0625rem;
+      border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.8)30%, rgba(255, 255, 255, 0)50%) 1;
+    }
+  }
+
+  &__current-forecast {
+    @include display-flex-row;
+
+    &--icon {
+      width: 11rem;
+      margin-left: -1rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__detail {
+      @include display-flex-column;
+      font-size: 2rem;
+    }
+
+    &__stats {
+      @include display-flex-row;
+      font-size: 6rem;
+
+
+      &--row {
+        @include display-flex-row;
+        gap: 0.5rem;
+        justify-content: flex-start;
+      }
+
+      &--column {
+        height: 85%;
+        padding: 0.55rem;
+        @include display-flex-column;
+        gap: 0.5rem;
+        justify-content: center;
+        align-content: center;
+        height: 100%;
+        font-size: 1.5rem;
+        border-right: solid 0.0625rem;
+        border-image: linear-gradient(0deg, rgba(255, 255, 255, 0)0%, rgba(255, 255, 255, 0.8)50%, rgba(255, 255, 255, 0)100%) 1;
+
+        img {
+          height: 1.5rem;
+        }
+      }
+
+      &--column:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  &__forecast-selector {
+    width: 100%;
+    @include display-flex-row;
+    justify-content: center;
+    margin-bottom: -0.75rem;
+    margin-top: -0.5rem;
+    gap: 0.5rem;
+
+    &--divider {
+      height: 1.4rem;
+      border-right: solid 0.0625rem white;
+    }
+
+    &--button {
+      @include clear-button-styling;
+      font-size: 1.1rem;
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in-out;
+
+      &.selected {
+        opacity: 1;
+      }
+    }
+  }
+
+  .close-button {
+    @include clear-button-styling;
+    position: absolute;
+    right: 0.8rem;
+    top: 0.8rem;
+
+    img {
+      height: 2.5rem;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  .weather-stat-column {
+    @include display-flex-column;
+    height: 6rem;
+    padding: 1rem;
+    border-right: solid 0.0625rem;
+    border-image: linear-gradient(0deg, rgba(255, 255, 255, 0)0%, rgba(255, 255, 255, 0.8)50%, rgba(255, 255, 255, 0)100%) 1;
+
+    align-content: center;
+    justify-content: flex-end;
+
+  }
+}
+
+.weather-panes {
+  @include display-flex-row;
+  gap: 0.8rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  grid-area: 1/1/1/1;
+
+  &__item {
+    border-radius: 0.4rem;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
+    backdrop-filter: blur(0.25rem);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    list-style-type: none;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    &--title {
+      font-size: 1.4rem;
+    }
+
+    &--icon {
+      width: 7rem;
+      height: 4.3rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &--description {
+      font-size: 1.1rem;
+    }
+
+    &--divider {
+      width: 100%;
+      margin-bottom: 0.2rem;
+      border-bottom: solid 0.0625rem;
+      border-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9)50%, rgba(255, 255, 255, 0)100%) 1;
+    }
+
+    &__detail {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      width: 7.5rem;
+      gap: 0.65rem;
+
+      &--row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        gap: 0.5rem;
+      }
+
+      &--value {
+        @include display-flex-row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 1.2rem;
+
+        img {
+          height: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.fade {
+  opacity: 0.8;
+}

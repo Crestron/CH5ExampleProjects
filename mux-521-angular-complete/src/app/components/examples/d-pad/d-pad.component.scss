@@ -1,0 +1,61 @@
+@import 'variables';
+@import 'mixins';
+
+.d-pad {
+  aspect-ratio: 1/1;
+  width: 100%;
+  display: grid;
+  grid-template: repeat(3, 1fr) /repeat(3, 1fr);
+
+  $border-radius: 1.2rem;
+
+  &__button {
+    @include clear-button-styling;
+
+    align-items: center;
+    background: $button-background;
+    border-radius: $border-radius;
+    display: flex;
+    justify-content: center;
+
+    img {
+      @include full-size;
+    }
+
+    &:active {
+      background: radial-gradient(circle, rgb(0, 140, 233) 0%, $button-background 90%);
+      // This is required to prevent an overlap from the radial gradient
+      z-index: 2;
+    }
+
+    &--centre::after{
+      content: "";
+      background-color: white;
+      border-radius: 50%;
+      height: 40%;
+      width: 40%;
+    }
+  }
+
+  &__corner {
+    &--bottom-left {
+      border-top-right-radius: $border-radius;
+      box-shadow: 1.5rem -1.5rem 0 0 $button-background ;
+    }
+
+    &--bottom-right {
+      border-top-left-radius: $border-radius;
+      box-shadow: -1.5rem -1.5rem 0 0 $button-background ;
+    }
+
+    &--top-left {
+      border-bottom-right-radius: $border-radius;
+      box-shadow: 1.5rem 1.5rem 0 0 $button-background;
+    }
+
+    &--top-right {
+      border-bottom-left-radius: $border-radius;
+      box-shadow: -1.5rem 1.5rem 0 0 $button-background;
+    }
+  }
+}

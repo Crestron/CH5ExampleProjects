@@ -1,0 +1,109 @@
+
+
+<div class="apple-tv-container">
+  <div class="apple-tv-remote">
+    <div class="apple-tv-remote__top-bar">
+      <div class="apple-tv-remote__spacer"></div>
+      <div class="apple-tv-remote__indicator" [class.illuminated]="pressed()"></div>
+      <button
+        class="apple-tv-remote__power-button"
+        (pointerdown)="RemoteKeyDown('Power')"
+        (pointerup)="RemoteKeyUp('Power')"
+        (pointercancel)="RemoteKeyUp('Power')"
+      >
+        <img src="assets/icons/apple-tv/power.svg" />
+      </button>
+    </div>
+
+    <nav class="apple-tv-remote__d-nav">
+      <button
+        class="d-nav__button d-nav__button--up"
+        (pointerdown)="RemoteKeyDown('Up')"
+        (pointerup)="RemoteKeyUp('Up')"
+        (pointercancel)="RemoteKeyUp('Up')"
+      ></button>
+      <button
+        class="d-nav__button d-nav__button--down"
+        (pointerdown)="RemoteKeyDown('Down')"
+        (pointerup)="RemoteKeyUp('Down')"
+        (pointercancel)="RemoteKeyUp('Down')"
+      ></button>
+      <button
+        class="d-nav__button d-nav__button--left"
+        (pointerdown)="RemoteKeyDown('Left')"
+        (pointerup)="RemoteKeyUp('Left')"
+        (pointercancel)="RemoteKeyUp('Left')"
+      ></button>
+      <button
+        class="d-nav__button d-nav__button--right"
+        (pointerdown)="RemoteKeyDown('Right')"
+        (pointerup)="RemoteKeyUp('Right')"
+        (pointercancel)="RemoteKeyUp('Right')"
+      ></button>
+      <button
+        class="d-nav__button d-nav__button--centre"
+        (pointerdown)="RemoteKeyDown('Ok')"
+        (pointerup)="RemoteKeyUp('Ok')"
+        (pointercancel)="RemoteKeyUp('Ok')"
+      ></button>
+    </nav>
+
+    <div class="apple-tv-remote__buttons">
+      <button
+        class="remote-button remote-button--back"
+        (pointerdown)="RemoteKeyDown('Back')"
+        (pointerup)="RemoteKeyUp('Back')"
+        (pointercancel)="RemoteKeyUp('Back')"
+      >
+        <img src="assets/icons/apple-tv/left-arrow.svg" />
+      </button>
+
+      <button
+        class="remote-button remote-button--tv"
+        (pointerdown)="RemoteKeyDown('TV')"
+        (pointerup)="RemoteKeyUp('TV')"
+        (pointercancel)="RemoteKeyUp('TV')"
+      >
+        <img src="assets/icons/apple-tv/tv.svg" />
+      </button>
+
+      <button class="remote-button remote-button--volume">
+        <button
+          class="remote-button remote-button--plus"
+          (pointerdown)="RemoteKeyDown('VolumeUp')"
+          (pointerup)="RemoteKeyUp('VolumeUp')"
+          (pointercancel)="RemoteKeyUp('VolumeUp')"
+        >
+          <img src="assets/icons/apple-tv/plus.svg" />
+        </button>
+        <button
+          class="remote-button remote-button--minus"
+          (pointerdown)="RemoteKeyDown('VolumeDown')"
+          (pointerup)="RemoteKeyUp('VolumeDown')"
+          (pointercancel)="RemoteKeyUp('VolumeDown')"
+        >
+          <img src="assets/icons/apple-tv/minus.svg" />
+        </button>
+      </button>
+
+      <button
+        class="remote-button remote-button--play-pause"
+        style="grid-column: 1"
+        (pointerdown)="RemoteKeyDown('PlayPause')"
+        (pointerup)="RemoteKeyUp('PlayPause')"
+        (pointercancel)="RemoteKeyUp('PlayPause')"
+      >
+        <img src="assets/icons/apple-tv/play-pause.svg" />
+      </button>
+
+      <button
+        class="remote-button remote-button--mute"
+        (pointerdown)="RemoteKeyDown('Mute')"
+        (pointerup)="RemoteKeyUp('Mute')"
+        (pointercancel)="RemoteKeyUp('Mute')"
+      >
+        <img src="assets/icons/apple-tv/speaker-mute.svg" />
+      </button>
+    </div>
+  </div>
+</div>

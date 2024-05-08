@@ -1,0 +1,46 @@
+{
+  "name": "mpc3-201-b",
+  "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:archive": "ch5-cli archive -c src/config/contract.cse2j -p mpc3-201-b-app -d dist/mpc3-201-b/browser -o archive",
+    "compile": "npm run build && npm run build:archive",
+    "build:deploy": "ch5-cli deploy -H 192.168.1.211 -t touchscreen archive/mpc3-201-b-app.ch5z",
+    "build:onestep": "npm run build --prod && npm run build:archive && npm run build:deploy",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^17.3.4",
+    "@angular/common": "^17.3.4",
+    "@angular/compiler": "^17.3.4",
+    "@angular/core": "^17.3.4",
+    "@angular/forms": "^17.3.4",
+    "@angular/platform-browser": "^17.3.4",
+    "@angular/platform-browser-dynamic": "^17.3.4",
+    "@angular/router": "^17.3.4",
+    "@crestron/ch5-crcomlib": "^2.9.0",
+    "@crestron/ch5-webxpanel": "^2.8.0",
+    "g": "^2.0.1",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.6.2",
+    "zone.js": "^0.14.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.3.4",
+    "@angular/cli": "^17.3.4",
+    "@angular/compiler-cli": "^17.3.4",
+    "@types/jasmine": "~4.3.0",
+    "@types/node": "^12.20.55",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.2.2"
+  }
+}

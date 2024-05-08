@@ -1,0 +1,44 @@
+<div class="volume">
+  <div class="volume__buttons">
+    <button
+      class="volume__button"
+      (pointerdown)="RampUp(true)"
+      (pointerup)="RampUp(false)"
+      (pointerout)="RampUp(false)"
+    >
+      <img src="assets/images/icons/volume/speaker-up.svg" />
+    </button>
+
+    <button
+      class="volume__button"
+      [class.selected]="mute()"
+      (click)="MuteToggle()"
+    >
+      <img src="assets/images/icons/volume/speaker-mute.svg" />
+    </button>
+    <button
+      class="volume__button"
+      (pointerdown)="RampDown(true)"
+      (pointerup)="RampDown(false)"
+      (pointerout)="RampDown(false)"
+    >
+      <img src="assets/images/icons/volume/speaker-down.svg" />
+    </button>
+  </div>
+
+  <div class="volume__gauge" style="mix-blend-mode: screen">
+    <div class="volume__gauge--indicator" [style.height]="gaugeHeight()"></div>
+    <ul class="volume__gauge--segments">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</div>

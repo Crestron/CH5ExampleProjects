@@ -1,0 +1,18 @@
+<template id="MPC3201B.MPC3201B.MPC3201B">
+	<div id="MPC3201B.MPC3201B">
+	 		<ch5-button sendEventOnClick="MPC3201B.Power">
+        	</ch5-button>
+	 		<ch5-button sendEventOnClick="MPC3201B.VolumeUp">
+        	</ch5-button>
+	 		<ch5-button sendEventOnClick="MPC3201B.VolumeDown">
+        	</ch5-button>
+	 		<ch5-button sendEventOnClick="MPC3201B.Mute" receiveStateSelected="MPC3201B.MuteFb">
+        	</ch5-button>
+	 		<ch5-slider receiveStateValue="MPC3201B.PowerState" nohandle>
+        	</ch5-slider>
+	 		<ch5-slider receiveStateValue="MPC3201B.Bargraph" nohandle>
+        	</ch5-slider>
+	 		<ch5-slider sendEventOnChange="MPC3201B.Source" receiveStateValue="MPC3201B.SourceFb">
+        	</ch5-slider>
+	 </div>
+</template>

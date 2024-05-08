@@ -1,0 +1,71 @@
+@mixin user-select($value) {
+  -webkit-touch-callout: $value;
+
+  -webkit-user-callout: $value;
+  /* iOS Safari */
+  -webkit-user-select: $value;
+  /* Safari */
+  -khtml-user-select: $value;
+  /* Konqueror HTML */
+  -moz-user-select: $value;
+  /* Firefox */
+  -ms-user-select: $value;
+  /* Internet Explorer/Edge */
+  user-select: $value;
+  /* Non-prefixed version, currently */
+  -webkit-user-drag: $value;
+  /* Prevents dragging of images/divs etc */
+  -webkit-user-modify: $value;
+
+  -webkit-highlight: $value;
+}
+
+/* Sets the element to 100% width & height. */
+@mixin full-size {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin clear-button-styling{
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  outline: none;
+  color: inherit;
+}
+
+@mixin absolute-top-left
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@mixin display-flex-column
+{
+  display: flex;
+  flex-direction: column;
+}
+@mixin display-flex-row
+{
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin center
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin absolute-full-screen
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

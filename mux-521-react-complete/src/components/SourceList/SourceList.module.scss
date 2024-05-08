@@ -1,0 +1,38 @@
+@import '../../styles/buttons';
+
+// The source list container.
+.source-list {
+  // <ul> elements have default styling that we may want to remove.
+  // Unset the default margin.
+  margin: unset;
+  // Unset the default padding.
+  padding: unset;
+  // Set the width of the source list to 21.5rem (344px).
+  width: 21.5rem;
+  // Set the height of the source list to 100% of the parent container.
+  // Not strictly necessary as the parent element is also a flex.
+  height: 100%;
+  // Set the display of the source list to flex.
+  display: flex;
+  // Set the flex direction of the source list to column.
+  flex-direction: column;
+
+  // Set the gap between the elements in the source list to 1rem (16px).
+  gap: 1rem;
+  // justify-content: center;
+  overflow-x: auto;
+
+  // Targeting all <li> elements within the source list.
+  &__item {
+    // Sets the default styling of the list item to none to remove the bullet points.
+    list-style-type: none;
+    // Set the height of each element to 5.5rem (88px).
+    height: 5.6rem;
+
+  }
+
+  &__button {
+    @extend .crestron-button;
+    height: 5.6rem;
+  }
+}

@@ -1,0 +1,515 @@
+{
+	"Errors": [],
+	"id": "_dr8b1t3cz",
+	"name": "MPC3201B",
+	"description": "Crestron MPC3-201-B",
+	"company": "Pure Audio Visual Ltd",
+	"client": "Crestron Masters 2024",
+	"author": "Colin Hasted",
+	"version": "1.0.0.0",
+	"schemaVersion": 1,
+	"subContractLinks": [],
+	"subContracts": [],
+	"specifications": [
+		{
+			"Errors": [],
+			"parentId": "_dr8b1t3cz",
+			"id": "_24amagnrs",
+			"componentId": "_zhqyg0kdl",
+			"instanceName": "Diagnostics",
+			"numberOfInstances": 1
+		},
+		{
+			"Errors": [],
+			"parentId": "_dr8b1t3cz",
+			"id": "_6ns3up4g7",
+			"componentId": "_totf7jfpo",
+			"instanceName": "AppleTV",
+			"numberOfInstances": 1
+		},
+		{
+			"Errors": [],
+			"parentId": "_dr8b1t3cz",
+			"id": "_tu114ztfp",
+			"componentId": "_x2fh0uuik",
+			"instanceName": "MPC3201B",
+			"numberOfInstances": 1
+		}
+	],
+	"components": [
+		{
+			"Errors": [],
+			"parentId": "_dr8b1t3cz",
+			"id": "_totf7jfpo",
+			"name": "AppleTV",
+			"commands": [
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_0otza4c1y",
+					"dataType": 1,
+					"notes": "",
+					"id": "_8t0kskpry",
+					"parentId": "_totf7jfpo",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_mqbds42jr",
+					"dataType": 1,
+					"notes": "",
+					"id": "_gfff74sls",
+					"parentId": "_totf7jfpo",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_noqhx558x",
+					"dataType": 1,
+					"notes": "",
+					"id": "_alrh5odn5",
+					"parentId": "_totf7jfpo",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_5tqigw1tl",
+					"dataType": 1,
+					"notes": "",
+					"id": "_ybvkqg3xd",
+					"parentId": "_totf7jfpo",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_ghdw9ozve",
+					"dataType": 1,
+					"notes": "",
+					"id": "_v050ajsmf",
+					"parentId": "_totf7jfpo",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_my2ofig6k",
+					"dataType": 1,
+					"notes": "",
+					"id": "_h6v6dnhsk",
+					"parentId": "_totf7jfpo",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_gvapdoh7f",
+					"dataType": 1,
+					"notes": "",
+					"id": "_phwnm5n7q",
+					"parentId": "_totf7jfpo",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_iiqrjt6xf",
+					"dataType": 1,
+					"notes": "",
+					"id": "_k48qx86nb",
+					"parentId": "_totf7jfpo",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_n2qfpisap",
+					"dataType": 1,
+					"notes": "",
+					"id": "_5f8omevb2",
+					"parentId": "_totf7jfpo",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_4u37o93er",
+					"dataType": 1,
+					"notes": "",
+					"id": "_iqwsqqo11",
+					"parentId": "_totf7jfpo",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_cccvue39x",
+					"dataType": 1,
+					"notes": "",
+					"id": "_w6dd9zfnn",
+					"parentId": "_totf7jfpo",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_d6mvjhdie",
+					"dataType": 1,
+					"notes": "",
+					"id": "_se6kg65rq",
+					"parentId": "_totf7jfpo",
+					"attributeType": 0
+				}
+			],
+			"feedbacks": [
+				{
+					"Errors": [],
+					"name": "Power",
+					"siblingId": "_8t0kskpry",
+					"dataType": 1,
+					"notes": "",
+					"id": "_0otza4c1y",
+					"parentId": "_totf7jfpo",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "Up",
+					"siblingId": "_gfff74sls",
+					"dataType": 1,
+					"notes": "",
+					"id": "_mqbds42jr",
+					"parentId": "_totf7jfpo",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "Down",
+					"siblingId": "_alrh5odn5",
+					"dataType": 1,
+					"notes": "",
+					"id": "_noqhx558x",
+					"parentId": "_totf7jfpo",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "Left",
+					"siblingId": "_ybvkqg3xd",
+					"dataType": 1,
+					"notes": "",
+					"id": "_5tqigw1tl",
+					"parentId": "_totf7jfpo",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "Right",
+					"siblingId": "_v050ajsmf",
+					"dataType": 1,
+					"notes": "",
+					"id": "_ghdw9ozve",
+					"parentId": "_totf7jfpo",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "Ok",
+					"siblingId": "_h6v6dnhsk",
+					"dataType": 1,
+					"notes": "",
+					"id": "_my2ofig6k",
+					"parentId": "_totf7jfpo",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "Back",
+					"siblingId": "_phwnm5n7q",
+					"dataType": 1,
+					"notes": "",
+					"id": "_gvapdoh7f",
+					"parentId": "_totf7jfpo",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "TV",
+					"siblingId": "_k48qx86nb",
+					"dataType": 1,
+					"notes": "",
+					"id": "_iiqrjt6xf",
+					"parentId": "_totf7jfpo",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "PlayPause",
+					"siblingId": "_5f8omevb2",
+					"dataType": 1,
+					"notes": "",
+					"id": "_n2qfpisap",
+					"parentId": "_totf7jfpo",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "VolumeUp",
+					"siblingId": "_iqwsqqo11",
+					"dataType": 1,
+					"notes": "",
+					"id": "_4u37o93er",
+					"parentId": "_totf7jfpo",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "VolumeDown",
+					"siblingId": "_w6dd9zfnn",
+					"dataType": 1,
+					"notes": "",
+					"id": "_cccvue39x",
+					"parentId": "_totf7jfpo",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "Mute",
+					"siblingId": "_se6kg65rq",
+					"dataType": 1,
+					"notes": "",
+					"id": "_d6mvjhdie",
+					"parentId": "_totf7jfpo",
+					"attributeType": 1
+				}
+			],
+			"specifications": []
+		},
+		{
+			"Errors": [],
+			"parentId": "_dr8b1t3cz",
+			"id": "_zhqyg0kdl",
+			"name": "Diagnostics",
+			"commands": [
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_62ck0if46",
+					"dataType": 3,
+					"notes": "",
+					"id": "_x530x90uh",
+					"parentId": "_zhqyg0kdl",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_dp6snzwo5",
+					"dataType": 3,
+					"notes": "",
+					"id": "_fadjhm63p",
+					"parentId": "_zhqyg0kdl",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "Command",
+					"siblingId": "_5mlbpsxri",
+					"dataType": 3,
+					"notes": "Sends direct commands to the user interface",
+					"id": "_mr4pvqjf7",
+					"parentId": "_zhqyg0kdl",
+					"attributeType": 0
+				}
+			],
+			"feedbacks": [
+				{
+					"Errors": [],
+					"name": "Debug",
+					"siblingId": "_x530x90uh",
+					"dataType": 3,
+					"notes": "Debug messages from the user interface",
+					"id": "_62ck0if46",
+					"parentId": "_zhqyg0kdl",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "Error",
+					"siblingId": "_fadjhm63p",
+					"dataType": 3,
+					"notes": "Error messages from the user interface",
+					"id": "_dp6snzwo5",
+					"parentId": "_zhqyg0kdl",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_mr4pvqjf7",
+					"dataType": 3,
+					"notes": "",
+					"id": "_5mlbpsxri",
+					"parentId": "_zhqyg0kdl",
+					"attributeType": 1
+				}
+			],
+			"specifications": []
+		},
+		{
+			"Errors": [],
+			"parentId": "_dr8b1t3cz",
+			"id": "_x2fh0uuik",
+			"name": "MPC3201B",
+			"commands": [
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_a6x23a5kf",
+					"dataType": 1,
+					"notes": "",
+					"id": "_f39kybvi8",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_90x2tzzm1",
+					"dataType": 1,
+					"notes": "",
+					"id": "_9h0e45y4v",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_4kd8tgdwq",
+					"dataType": 1,
+					"notes": "",
+					"id": "_nq8dl9741",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "MuteFb",
+					"siblingId": "_y44dxjbr3",
+					"dataType": 1,
+					"notes": "",
+					"id": "_2rdyzzt4y",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "PowerState",
+					"siblingId": "_27cia2o8t",
+					"dataType": 2,
+					"notes": "",
+					"id": "_izta11q53",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "Bargraph",
+					"siblingId": "_u1vfjz2d8",
+					"dataType": 2,
+					"notes": "",
+					"id": "_3oco6dncu",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 0
+				},
+				{
+					"Errors": [],
+					"name": "SourceFb",
+					"siblingId": "_fvjtuhh9r",
+					"dataType": 2,
+					"notes": "",
+					"id": "_cxsrsc9a5",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 0
+				}
+			],
+			"feedbacks": [
+				{
+					"Errors": [],
+					"name": "Power",
+					"siblingId": "_f39kybvi8",
+					"dataType": 1,
+					"notes": "",
+					"id": "_a6x23a5kf",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "VolumeUp",
+					"siblingId": "_9h0e45y4v",
+					"dataType": 1,
+					"notes": "",
+					"id": "_90x2tzzm1",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "VolumeDown",
+					"siblingId": "_nq8dl9741",
+					"dataType": 1,
+					"notes": "",
+					"id": "_4kd8tgdwq",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "Mute",
+					"siblingId": "_2rdyzzt4y",
+					"dataType": 1,
+					"notes": "",
+					"id": "_y44dxjbr3",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_izta11q53",
+					"dataType": 2,
+					"notes": "",
+					"id": "_27cia2o8t",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "",
+					"siblingId": "_3oco6dncu",
+					"dataType": 0,
+					"notes": "",
+					"id": "_u1vfjz2d8",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 1
+				},
+				{
+					"Errors": [],
+					"name": "Source",
+					"siblingId": "_cxsrsc9a5",
+					"dataType": 2,
+					"notes": "",
+					"id": "_fvjtuhh9r",
+					"parentId": "_x2fh0uuik",
+					"attributeType": 1
+				}
+			],
+			"specifications": []
+		}
+	],
+	"allComponentsForAllContracts": []
+}

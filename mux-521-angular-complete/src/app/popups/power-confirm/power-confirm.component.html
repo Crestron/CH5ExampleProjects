@@ -1,0 +1,19 @@
+@if(visible()) {
+<div class="power-confirm" @fadeIn @fadeOut>
+  <span class="power-confirm__title">Power System Off?</span>
+  <div class="power-confirm__buttons">
+    <button
+      class="power-confirm__button power-confirm__button--green"
+      (click)="Yes()"
+    >
+      Yes
+    </button>
+    <button
+      class="power-confirm__button power-confirm__button--red"
+      (click)="No()"
+    >
+      No
+    </button>
+  </div>
+</div>
+}

@@ -1,0 +1,171 @@
+{
+    "name": "MSSXpanel",
+    "timestamp": "2024-01-29T15:20:41.4285675+00:00",
+    "version": "1.0.0.0",
+    "schema_version": 1,
+    "extra_value": "MUX521",
+    "signals": {
+        "states": {
+            "boolean": {
+                "1": {
+                    "1": "StartPageVisibilityJoin",
+                    "4": "StartPage.Button.Selected"
+                },
+                "2": {
+                    "1": "MainPage.MutedFeedback.Visibility",
+                    "2": "MainPageVisibilityJoin"
+                },
+                "5": {
+                    "1": "MainPage.NvxInfo.Visibility"
+                },
+                "6": {
+                    "1": "MainPage.MediaControl.Visibility"
+                },
+                "7": {
+                    "1": "MainPage.AirMediaInfo.Visibility"
+                },
+                "8": {
+                    "1": "MainPage.PowerOffOk.Visibility"
+                },
+                "9": {
+                    "1001": "MainPage.SourceList.Button1ItemSelected",
+                    "1002": "MainPage.SourceList.Button2ItemSelected",
+                    "1003": "MainPage.SourceList.Button3ItemSelected",
+                    "1004": "MainPage.SourceList.Button4ItemSelected",
+                    "1005": "MainPage.SourceList.Button5ItemSelected",
+                    "1006": "MainPage.SourceList.Button6ItemSelected"
+                },
+                "11": {
+                    "3": "PowerOffOk.PowerOffNoButton.Selected",
+                    "4": "PowerOffOk.PowerOffYesButton.Selected"
+                },
+                "12": {
+                    "3": "HeaderBar.PowerButton.Selected"
+                },
+                "14": {
+                    "3": "MediaControl.BackButton.Selected",
+                    "4": "MediaControl.MenuButton.Selected",
+                    "5": "MediaControl.PlayButton.Selected"
+                }
+            },
+            "numeric": {
+                "2": {
+                    "3": "MainPage.VolumeBar.Touchfb"
+                }
+            },
+            "string": {
+                "2": {
+                    "1": "MainPage.SourceFeedbackLabel.Indirect"
+                },
+                "9": {
+                    "1": "MainPage.SourceList.Button1Text",
+                    "2": "MainPage.SourceList.Button2Text",
+                    "3": "MainPage.SourceList.Button3Text",
+                    "4": "MainPage.SourceList.Button4Text",
+                    "5": "MainPage.SourceList.Button5Text",
+                    "6": "MainPage.SourceList.Button6Text"
+                },
+                "10": {
+                    "1": "AirMediaInfo.AirmediaAddressFb.Indirect",
+                    "2": "AirMediaInfo.AirmediaPinFb.Indirect"
+                },
+                "12": {
+                    "1": "HeaderBar.RoomNameLabel.Indirect"
+                },
+                "13": {
+                    "1": "NvxInfo.NvxAddressFb.Indirect"
+                }
+            }
+        },
+        "events": {
+            "boolean": {
+                "StartPage.Button.Press": {
+                    "joinId": 3,
+                    "smartObjectId": 1
+                },
+                "MainPage.VolumeButtonList.Button1ItemPress": {
+                    "joinId": 1001,
+                    "smartObjectId": 4
+                },
+                "MainPage.VolumeButtonList.Button2ItemPress": {
+                    "joinId": 1002,
+                    "smartObjectId": 4
+                },
+                "MainPage.VolumeButtonList.Button3ItemPress": {
+                    "joinId": 1003,
+                    "smartObjectId": 4
+                },
+                "MainPage.SourceList.Button1ItemPress": {
+                    "joinId": 1001,
+                    "smartObjectId": 9
+                },
+                "MainPage.SourceList.Button2ItemPress": {
+                    "joinId": 1002,
+                    "smartObjectId": 9
+                },
+                "MainPage.SourceList.Button3ItemPress": {
+                    "joinId": 1003,
+                    "smartObjectId": 9
+                },
+                "MainPage.SourceList.Button4ItemPress": {
+                    "joinId": 1004,
+                    "smartObjectId": 9
+                },
+                "MainPage.SourceList.Button5ItemPress": {
+                    "joinId": 1005,
+                    "smartObjectId": 9
+                },
+                "MainPage.SourceList.Button6ItemPress": {
+                    "joinId": 1006,
+                    "smartObjectId": 9
+                },
+                "PowerOffOk.PowerOffNoButton.Press": {
+                    "joinId": 3,
+                    "smartObjectId": 11
+                },
+                "PowerOffOk.PowerOffYesButton.Press": {
+                    "joinId": 4,
+                    "smartObjectId": 11
+                },
+                "HeaderBar.PowerButton.Press": {
+                    "joinId": 3,
+                    "smartObjectId": 12
+                },
+                "MediaControl.BackButton.Press": {
+                    "joinId": 3,
+                    "smartObjectId": 14
+                },
+                "MediaControl.MenuButton.Press": {
+                    "joinId": 4,
+                    "smartObjectId": 14
+                },
+                "MediaControl.PlayButton.Press": {
+                    "joinId": 5,
+                    "smartObjectId": 14
+                },
+                "MediaControl.Dpad.Up": {
+                    "joinId": 3,
+                    "smartObjectId": 15
+                },
+                "MediaControl.Dpad.Down": {
+                    "joinId": 4,
+                    "smartObjectId": 15
+                },
+                "MediaControl.Dpad.Left": {
+                    "joinId": 5,
+                    "smartObjectId": 15
+                },
+                "MediaControl.Dpad.Right": {
+                    "joinId": 6,
+                    "smartObjectId": 15
+                },
+                "MediaControl.Dpad.Center": {
+                    "joinId": 7,
+                    "smartObjectId": 15
+                }
+            },
+            "numeric": {},
+            "string": {}
+        }
+    }
+}

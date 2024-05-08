@@ -1,0 +1,73 @@
+<ul class="source-list">
+  @for (button of SourceButton(); track $index) {
+  <li class="source-list__item">
+    <button
+      class="source-list__button"
+      (click)="selectSource($index)"
+      [class.selected]="button.state"
+    >
+      {{ button.title }}
+    </button>
+  </li>
+  } @empty { }
+</ul>
+
+<!-- if we were doing this long hand without using the framework's @for loop
+
+<ul class="source-list">
+  <li class="source-list__item">
+    <button
+      class="source-list__button"
+      (click)="selectSource(0)"
+      [class.selected]="SourceButton()[0].state"
+    >
+      {{ SourceButton()[0].title }}
+    </button>
+  </li>
+  <li class="source-list__item">
+    <button
+      class="source-list__button"
+      (click)="selectSource(1)"
+      [class.selected]="SourceButton()[1].state"
+    >
+      {{ SourceButton()[1].title }}
+    </button>
+  </li>
+  <li class="source-list__item">
+    <button
+      class="source-list__button"
+      (click)="selectSource(2)"
+      [class.selected]="SourceButton()[2].state"
+    >
+      {{ SourceButton()[2].title }}
+    </button>
+  </li>
+  <li class="source-list__item">
+    <button
+      class="source-list__button"
+      (click)="selectSource(3)"
+      [class.selected]="SourceButton()[3].state"
+    >
+      {{ SourceButton()[3].title }}
+    </button>
+  </li>
+  <li class="source-list__item">
+    <button
+      class="source-list__button"
+      (click)="selectSource(4)"
+      [class.selected]="SourceButton()[4].state"
+    >
+      {{ SourceButton()[4].title }}
+    </button>
+  </li>
+  <li class="source-list__item">
+    <button
+      class="source-list__button"
+      (click)="selectSource(5)"
+      [class.selected]="SourceButton()[5].state"
+    >
+      {{ SourceButton()[5].title }}
+    </button>
+  </li>
+</ul>
+-->

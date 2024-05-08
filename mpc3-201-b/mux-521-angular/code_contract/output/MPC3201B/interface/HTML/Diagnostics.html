@@ -1,0 +1,16 @@
+<template id="MPC3201B.Diagnostics.Diagnostics">
+	<div id="Diagnostics.Diagnostics">
+	 	<!--
+ 	 Event: Debug messages from the user interface
+-->
+<ch5-textinput sendEventOnChange="Diagnostics.Debug"> </ch5-textinput>
+	 	<!--
+ 	 Event: Error messages from the user interface
+-->
+<ch5-textinput sendEventOnChange="Diagnostics.Error"> </ch5-textinput>
+	 	<!--
+ 	 	 State: Sends direct commands to the user interface
+ 	 	-->
+ 		<span data-ch5-textcontent="Diagnostics.Command">Label</span>
+	 </div>
+</template>

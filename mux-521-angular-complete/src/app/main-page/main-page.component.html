@@ -1,0 +1,25 @@
+<div class="page">
+  <app-power-confirm />
+  <app-title-bar />
+  <div class="content">
+    <app-source-list [sources]="Sources" />
+
+    <div class="control-container">
+      <span
+        class="source-title"
+        data-ch5-textcontent="MainPage.SourceFeedbackLabel.Indirect"
+      ></span>
+
+      <div class="source-content">
+        @switch(source())
+        {
+          @case(Source.None){}
+          @case(Source.AirMedia){<app-airmedia /> }
+        @case(Source.AppleTV){ <app-apple-tv /> }
+        @default { <app-nvx-info /> }
+      }
+      </div>
+    </div>
+    <app-volume />
+  </div>
+</div>

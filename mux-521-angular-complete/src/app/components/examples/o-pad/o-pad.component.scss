@@ -1,0 +1,64 @@
+@import 'variables';
+@import 'mixins';
+
+.o-pad {
+  aspect-ratio: 1 / 1;
+  background-color: lightgrey;
+  border: solid 0.125rem lightgrey;
+  border-radius: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  overflow: hidden;
+  position: relative;
+  transform: rotate(45deg);
+
+  &__button {
+    @include clear-button-styling;
+
+    align-items: center;
+    background: $button-background;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+
+    &--up {
+      transform: translate(-0.0625rem, -0.0625rem);
+    }
+
+    &--down {
+      transform: translate(0.0625rem, 0.0625rem);
+    }
+
+    &--left {
+      transform: translate(-0.0625rem, 0.0625rem);
+    }
+
+    &--right {
+      transform: translate(0.0625rem, -0.0625rem);
+    }
+
+    img {
+      @include full-size;
+      transform: rotate(-45deg);
+    }
+
+    &--centre {
+      border: solid 0.125rem lightgrey;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      height: 7rem;
+      left: calc(50% - 3.5rem);
+      position: absolute;
+      top: calc(50% - 3.5rem);
+      transform: rotate(-45deg) ;
+      width: 7rem;
+    }
+
+    &:active {
+      background: radial-gradient(circle, rgb(0, 140, 233) 0%, $button-background 90%);
+    }
+  }
+}

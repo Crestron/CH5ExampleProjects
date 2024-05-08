@@ -1,0 +1,112 @@
+{
+	"name": "MPC3201B",
+	"timestamp": "2024-02-09 20:36:05.247",
+	"version": "1.0.0.0",
+	"schema_version": 1,
+	"extra_value": "Crestron MPC3-201-B",
+	"signals": {
+		"states": {
+			"boolean": {
+				"3": {
+					"4": "MPC3201B.MuteFb"
+				}
+			},
+			"numeric": {
+				"3": {
+					"1": "MPC3201B.PowerState",
+					"2": "MPC3201B.Bargraph",
+					"3": "MPC3201B.SourceFb"
+				}
+			},
+			"string": {
+				"1": {
+					"3": "Diagnostics.Command"
+				}
+			}
+		},
+		"events": {
+			"boolean": {
+				"AppleTV.Power": {
+					"joinId": 1,
+					"smartObjectId": 2
+				},
+				"AppleTV.Up": {
+					"joinId": 2,
+					"smartObjectId": 2
+				},
+				"AppleTV.Down": {
+					"joinId": 3,
+					"smartObjectId": 2
+				},
+				"AppleTV.Left": {
+					"joinId": 4,
+					"smartObjectId": 2
+				},
+				"AppleTV.Right": {
+					"joinId": 5,
+					"smartObjectId": 2
+				},
+				"AppleTV.Ok": {
+					"joinId": 6,
+					"smartObjectId": 2
+				},
+				"AppleTV.Back": {
+					"joinId": 7,
+					"smartObjectId": 2
+				},
+				"AppleTV.TV": {
+					"joinId": 8,
+					"smartObjectId": 2
+				},
+				"AppleTV.PlayPause": {
+					"joinId": 9,
+					"smartObjectId": 2
+				},
+				"AppleTV.VolumeUp": {
+					"joinId": 10,
+					"smartObjectId": 2
+				},
+				"AppleTV.VolumeDown": {
+					"joinId": 11,
+					"smartObjectId": 2
+				},
+				"AppleTV.Mute": {
+					"joinId": 12,
+					"smartObjectId": 2
+				},
+				"MPC3201B.Power": {
+					"joinId": 1,
+					"smartObjectId": 3
+				},
+				"MPC3201B.VolumeUp": {
+					"joinId": 2,
+					"smartObjectId": 3
+				},
+				"MPC3201B.VolumeDown": {
+					"joinId": 3,
+					"smartObjectId": 3
+				},
+				"MPC3201B.Mute": {
+					"joinId": 4,
+					"smartObjectId": 3
+				}
+			},
+			"numeric": {
+				"MPC3201B.Source": {
+					"joinId": 2,
+					"smartObjectId": 3
+				}
+			},
+			"string": {
+				"Diagnostics.Debug": {
+					"joinId": 1,
+					"smartObjectId": 1
+				},
+				"Diagnostics.Error": {
+					"joinId": 2,
+					"smartObjectId": 1
+				}
+			}
+		}
+	}
+}

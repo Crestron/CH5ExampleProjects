@@ -1,0 +1,144 @@
+@import "variables";
+@import "mixins";
+
+.mpc-3-201 {
+  @include display-flex-column;
+  width: 40rem;
+  height: 40rem;
+  flex: 0 0 auto;
+  filter: drop-shadow(0.4rem 0.4rem 0.7rem rgba(0, 0, 0, 0.4));
+
+  background: linear-gradient(135deg,
+      hsl(30deg 4% 18%) 0%,
+      hsl(32deg 5% 15%) 47%,
+      hsl(36deg 6% 11%) 51%,
+      hsl(45deg 13% 6%) 100%);
+
+  border: outset 0.3rem rgba(140, 140, 140, 0.6);
+  border-radius: 2.5rem;
+
+  padding: 0.125rem;
+
+  >div {
+    @include display-flex-column;
+    width: 100%;
+  }
+
+  &__upper-section {
+    height: 70%;
+  }
+
+  &__lower-section {
+    padding: 1.5rem;
+    justify-content: space-between;
+    flex: 1 auto;
+    border-top: solid 0.125rem rgba(255, 255, 255, 0.75);
+
+    .crestron-logo {
+      opacity: 0.9;
+      height: 1.2rem;
+    }
+  }
+}
+
+.sensor-bar {
+  @include display-flex-row;
+  width: 35%;
+  margin-top: 1.5rem;
+  justify-content: space-between;
+
+  &__sensor {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 100px;
+    background: rgba(0, 0, 0, 0.2);
+
+    &--proximity {
+      width: 3.6rem;
+    }
+  }
+}
+
+.source-buttons {
+  opacity: 0.9;
+  width: 75%;
+  margin-bottom: 3rem;
+  flex: 1 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+
+}
+
+.control-strip {
+  @include display-flex-row;
+  justify-content: space-evenly;
+  width: 90%;
+
+  &__volume {
+    @include display-flex-row;
+    gap: 0.5rem;
+  }
+
+  &__volume-bar {
+    position: relative;
+    border: inset 0.125rem rgba(17, 16, 13, 0.5);
+    background-color: rgb(20, 20, 20);
+    width: 12rem;
+    height: 0.6rem;
+
+    &--indicator {
+      width: 100%;
+      background: rgba(20, 86, 255, 0.8);
+      height: 100%;
+      // Use a transition to smooth the change in level (width).
+      transition: width 0.25s;
+
+      box-shadow: 0 0 1rem rgba(20, 86, 255, 0.8);
+      filter: blur(0.125rem);
+    }
+
+    &--segments {
+
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      top: 0;
+      position: absolute;
+
+      li {
+        list-style-type: none;
+        float: left;
+        border-right: 0.2rem solid rgba(25, 25, 25, 0.8);
+      }
+
+      li:last-child {
+        border-right: 0;
+      }
+    }
+  }
+}
+
+.apple-tv-remote {
+  flex: 1;
+  height: 100%;
+  transition: opacity 0.7s ease-in-out;
+  // For TSx60 series support.
+&.disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+}
+
+@media (orientation: portrait) {
+  .apple-tv-remote {
+    display: none;
+  }
+}
+

@@ -1,0 +1,85 @@
+@import 'mixins';
+
+.media-control {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  gap: 0.5rem;
+  height: 100%;
+  justify-content: center;
+
+  &__instructions {
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    img {
+      height: 2rem;
+    }
+  }
+
+  &__button-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__button {
+    @include clear-button-styling;
+    align-items: center;
+    background-color: rgb(0, 153, 255);
+    border-radius: 0.4rem;
+    display: flex;
+    font-size: 1.5rem;
+    height: 5.5rem;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+    width: 8.25rem;
+
+    img {
+      height: 60%;
+      width: 60%;
+    }
+
+    &:active {
+      background-color: rgb(0, 115, 191);
+    }
+
+    &.selected {
+      background-color: rgb(230, 0, 0);
+    }
+  }
+
+  &__d-pad-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    height: 18rem;
+    width: 18rem;
+    list-style: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+  }
+
+  &__d-pad-item {
+@include full-size;
+    padding: 1.5rem;
+    // Required to ensure that all the items are the same size
+    min-width: 100%;
+    display: inline-block;
+    list-style-type: none;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}

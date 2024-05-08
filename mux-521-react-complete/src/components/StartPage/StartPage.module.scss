@@ -1,0 +1,58 @@
+@import '../../styles/mixins';
+
+.page {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &__start-button {
+    @include clear-button-styling;
+    box-sizing: content-box;
+    border: bevel 0.25rem #000;
+    border-radius: 500px;
+    height: 14rem;
+    padding: 1rem;
+    position: relative;
+    width: 14rem;
+    z-index: 0;
+
+    img {
+      opacity: 1;
+      width: 80%;
+    }
+  }
+
+  &__start-button:before {
+    position: absolute;
+    top: -0.75rem;
+    left: -0.75rem;
+    animation: glowing 6s linear infinite;
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0, 153, 255) 25%, rgb(255, 255, 255), rgb(0, 153, 255) 75%, rgb(0, 0, 0));
+    border-radius: 500px;
+    content: '';
+    filter: blur(1rem);
+    height: calc(100% + 1.5rem);
+    transition: opacity .3s ease-in-out;
+    width: calc(100% + 1.5rem);
+    z-index: -1;
+  }
+
+  &__start-button:after {
+    @include full-size;
+    @include absolute-top-left;
+    background: radial-gradient(ellipse at center, rgb(50, 50, 50), rgba(0, 0, 0, 0.85));
+    border-radius: 100%;
+    content: '';
+    z-index: -1;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

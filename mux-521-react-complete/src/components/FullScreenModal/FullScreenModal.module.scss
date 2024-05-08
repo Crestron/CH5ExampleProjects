@@ -1,0 +1,16 @@
+.fullScreenModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; // Ensure it overlays everything else
+    overflow-y: auto; // Allows scrolling if content exceeds the viewport
+  
+    // Depending on your design, you may want a padding or not
+    padding: 20px;
+  }
+  

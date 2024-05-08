@@ -1,0 +1,119 @@
+<div class="app">
+  <div class="apple-tv-remote"
+    [class.disabled]="source() != Source.AppleTv">
+    <app-apple-tv-remote></app-apple-tv-remote>
+  </div>
+
+  <div class="mpc-3-201">
+    <div class="mpc-3-201__upper-section">
+      <div class="sensor-bar">
+        <div class="sensor-bar__sensor sensor-bar__sensor--proximity"></div>
+        <div class="sensor-bar__sensor sensor-bar__sensor--light"></div>
+      </div>
+      <div class="source-buttons">
+        <button
+          class="source-button"
+          (click)="SelectSource(Source.Pc)"
+          [class.selected]="source() === Source.Pc"
+        >
+          <img src="assets/icons/sources/pc.svg" />
+        </button>
+
+        <button
+          class="source-button"
+          (click)="SelectSource(Source.Laptop)"
+          [class.selected]="source() === Source.Laptop"
+        >
+          <img src="assets/icons/sources/laptop.svg" />
+        </button>
+
+        <button
+          class="source-button"
+          (click)="SelectSource(Source.AppleTv)"
+          [class.selected]="source() === Source.AppleTv"
+        >
+          <img src="assets/icons/sources/apple-tv.svg" />
+        </button>
+
+        <button
+          class="source-button"
+          (click)="SelectSource(Source.Bluray)"
+          [class.selected]="source() === Source.Bluray"
+        >
+          <img src="assets/icons/sources/blu-ray.svg" />
+        </button>
+
+        <button
+          class="source-button"
+          (click)="SelectSource(Source.Hdmi)"
+          [class.selected]="source() === Source.Hdmi"
+        >
+          LECTERN<br />HDMI
+        </button>
+
+        <button
+          class="source-button"
+          (click)="SelectSource(Source.InputPlate)"
+          [class.selected]="source() == Source.InputPlate"
+        >
+          FLOOR<br />PLATE
+        </button>
+      </div>
+    </div>
+
+    <div class="mpc-3-201__lower-section">
+      <div class="mpc-3-201__lower-section--crestron-logo"></div>
+      <div class="control-strip">
+        <button
+          class="power-button"
+          (click)="MuteToggle()"
+          [class.selected]="mute()"
+        >
+          <img src="assets/icons/volume/mute.svg" />
+        </button>
+        <div class="control-strip__volume">
+          <button
+            class="volume-button"
+            (pointerdown)="VolumeDown(true)"
+            (pointerup)="VolumeDown(false)"
+            (pointerleave)="VolumeDown(false)"
+          >
+            <img src="assets/icons/volume/minus.svg" />
+          </button>
+          <div class="control-strip__volume-bar">
+            <div
+              id="bargraph"
+              class="control-strip__volume-bar--indicator"
+              [style.width]="gaugeWidth()"
+            ></div>
+            <ul class="control-strip__volume-bar--segments">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <button
+            class="volume-button"
+            (pointerdown)="VolumeUp(true)"
+            (pointerup)="VolumeUp(false)"
+            (pointerleave)="VolumeUp(false)"
+          >
+            <img src="assets/icons/volume/plus.svg" />
+          </button>
+        </div>
+        <button
+          class="power-button"
+          (click)="PowerToggle()"
+          [class.selected]="power() === Power.On"
+          [class.busy]="busy()"
+        >
+          <img src="assets/icons/general/power.svg" />
+        </button>
+      </div>
+      <img class="crestron-logo" src="assets/logo/crestron-no-swirl.svg" />
+    </div>
+  </div>
+  <div class="apple-tv-remote"></div>
+</div>

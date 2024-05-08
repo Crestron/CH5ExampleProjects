@@ -1,0 +1,34 @@
+<div class="media-control">
+  <div class="media-control__instructions">
+    <img
+      class="media-control__instructions-icon"
+      src="assets/images/icons/navigation/swipe.svg"
+    />
+    <span class="media-control__instructions-text">
+      Swipe to change D-Pad style</span
+    >
+  </div>
+  <!-- This is our custom D-NAV component -->
+  <ul class="media-control__d-pad-list">
+   <li class="media-control__d-pad-item">
+      <app-d-pad-example join="MediaControl.Dpad" />
+    </li>
+  <li class="media-control__d-pad-item">
+      <app-o-pad-example join="MediaControl.Dpad" />
+    </li>
+    <li class="media-control__d-pad-item">
+      <app-o-pad-alt-example join="MediaControl.Dpad" />
+    </li>
+    <li class="media-control__d-pad-item">
+      <app-o-pad-8-way-example join="MediaControl.Dpad" />
+    </li>
+  </ul>
+  <div class="media-control__button-container">
+    <button class="media-control__button" (click)="back()">Back</button>
+    <button class="media-control__button" (click)="playPause()">
+      <img src="assets/images/icons/transport/play-pause.svg" />
+    </button>
+    <button class="media-control__button" (click)="menu()">Menu</button>
+  </div>
+</div>
+

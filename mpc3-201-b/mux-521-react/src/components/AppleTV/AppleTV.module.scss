@@ -1,0 +1,374 @@
+// Importing mixins for reuse
+@import '../../styles/mixins';
+@import '../../styles/variables';
+@import '../../styles/buttons';
+
+// Styling for the container of the Apple TV remote
+.apple-tv-container {
+  // Mixin to center the content
+  @include display-flex-center;
+  // Setting the height to 100%
+  height: 100%;
+  // Setting the width to 12rem
+  // width: 12rem;
+}
+
+// Styling for the Apple TV remote
+.apple-tv-remote {
+  // Mixin to display flex in column
+  @include display-flex-column;
+  // Background gradient from grey to light grey
+  background: linear-gradient(10deg, rgba(146, 147, 149, 1) 0%, rgba(235, 236, 238, 1) 100%);
+  // Setting the border radius to 2.5rem for rounded corners
+  border-radius: 2.5rem;
+  // Shadow effect
+  filter: drop-shadow(0.5rem 0.4rem 0.7rem rgba(0, 0, 0, 0.1));
+  // Setting the gap between grid items to 0.8rem
+  gap: 0.8rem;
+  // Setting the height to 44rem
+  height: 44rem;
+  // Aligning the content to the start of the flex container
+  justify-content: flex-start;
+  // Positioning the remote 2rem from the left
+  left: 2rem;
+  // Adding a padding top of 1rem
+  padding-top: 1rem;
+  // Positioning the remote 2rem from the top
+  top: 2rem;
+  // Setting the width to 12rem
+  width: 12rem;
+
+
+  // Styling for the top bar of the remote
+  &__top-bar {
+    // Mixin to display flex in row
+    @include display-flex-row;
+    // Distributing the items evenly along the horizontal axis
+    justify-content: space-between;
+    // Setting the width to 80%
+    width: 80%;
+  }
+
+  // Styling for the spacer in the remote
+  &__spacer {
+    // Making the spacer invisible
+    visibility: hidden;
+    // Setting the width to 2.3rem
+    width: 2.3rem;
+  }
+
+  // Styling for the indicator in the remote
+  &__indicator {
+    // Background gradient from dark grey to medium grey
+    background: radial-gradient(circle, rgb(27, 28, 30) 0%, rgba(55, 55, 55) 100%);
+    // Setting the border radius to 0.15rem for a slightly rounded corner
+    border-radius: 0.15rem;
+    // Setting the height to 0.3rem
+    height: 0.3rem;
+    // Hiding the overflow content
+    overflow: hidden;
+    // Setting the width to 0.8rem
+    width: 0.8rem;
+
+    // Styling for the illuminated state of the indicator
+    &.illuminated::after {
+      // Making the after pseudo-element fully opaque
+      opacity: 1;
+      // Removing the transition
+      transition: none;
+    }
+
+    // Styling for the after pseudo-element of the indicator
+    &::after {
+      // Mixin to make the pseudo-element full size
+      @include full-size;
+      // Background gradient from light blue to medium blue
+      background: radial-gradient(circle, rgb(120, 120, 255, 0.8) 0%, rgb(60, 60, 255, 0.8) 150%);
+      // Setting the content to an empty string
+      content: "";
+      // Displaying the pseudo-element as a block
+      display: block;
+      // Setting the initial opacity to 0
+      opacity: 0;
+      // Transition on the opacity over 0.5s
+      transition: 0.5s opacity ease-in;
+
+    }
+  }
+
+  // Styling for the power button of the remote
+  &__power-button {
+    // Mixin to center the content and unset button properties
+    @include display-flex-center;
+    @include unset-button-properties;
+    // Setting the border to a ridge style with a width of 0.08rem and a color of dark grey
+    border: ridge 0.08rem rgba(0, 0, 0, 0.4);
+    // Setting the border radius to 100% for a circular button
+    border-radius: 100%;
+    // Setting the height to 2.3rem
+    height: 2.3rem;
+    // Setting the width to 2.3rem
+    width: 2.3rem;
+
+
+    // Styling for the image in the power button
+    img {
+      // Setting the height to 1.15rem
+      height: 1.15rem;
+      // Centering the image
+      margin: auto;
+      // Setting the opacity to 0.7
+      opacity: .7;
+      // Adding a padding bottom of 0.08rem
+      padding-bottom: 0.08rem;
+      // Setting the width to 1.15rem
+      width: 1.15rem;
+    }
+
+    // Styling for the active state of the power button
+    &:active {
+      // Changing the background color to a light grey when active
+      background-color: rgba(170, 170, 170, 0.1);
+      // Changing the border to a ridge style with a width of 0.08rem and a color of medium grey when active
+      border: ridge 0.08rem rgba(50, 50, 50, 0.6);
+    }
+  }
+
+  // Styling for the directional navigation of the remote
+  &__d-nav {
+    // Mixin to center the content
+    @include display-flex-center;
+    // Background gradient from dark grey to black
+    background: radial-gradient(at 50% 60%, rgb(65, 65, 65) 25%, rgb(16, 16, 16) 80%);
+    // Setting the border to an outset style with a width of 0.0175rem and a color of light grey
+    border: outset 0.0175rem rgba(255, 255, 255, 0.6);
+    // Setting the border radius to 100% for a circular navigation
+    border-radius: 100%;
+    // Displaying the content as a grid
+    display: grid;
+    // Setting the grid to two columns and two rows
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    // Setting the height to 10.5rem
+    height: 10.5rem;
+    // Hiding the overflow content
+    overflow: hidden;
+    // Positioning the navigation relative to its normal position
+    position: relative;
+    // Setting the width to 10.5rem
+    width: 10.5rem;
+
+
+    // Styling for the directional navigation buttons
+    .d-nav__button {
+      // Mixin to center the content
+      @include display-flex-center;
+      // Mixin to unset button properties
+      @include unset-button-properties;
+      // Setting the background color to transparent
+      background-color: transparent;
+      // Setting the height to 6.4rem
+      height: 6.4rem;
+      // Positioning the button absolute to its nearest positioned ancestor
+      position: absolute;
+      // Rotating the button 45 degrees
+      transform: rotate(45deg);
+      // Setting the width to 6.4rem
+      width: 6.4rem;
+
+
+      // Styling for the up button
+      &--up {
+        // Positioning the button 6.4rem from the bottom
+        bottom: 6.4rem;
+        // Positioning the button 2rem from the left
+        left: 2rem;
+      }
+
+      // Styling for the down button
+      &--down {
+        // Positioning the button 2rem from the left
+        left: 2rem;
+        // Positioning the button 6.4rem from the top
+        top: 6.4rem;
+      }
+
+      // Styling for the left button
+      &--left {
+        // Positioning the button 6.4rem from the right
+        right: 6.4rem;
+      }
+
+      // Styling for the right button
+      &--right {
+        // Positioning the button 6.4rem from the left
+        left: 6.4rem;
+      }
+
+      // Styling for the active state of the buttons
+      &:active {
+        // Changing the background to a radial gradient from semi-transparent black to transparent when active
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 80%);
+      }
+
+      // Styling for the after pseudo-element of the buttons
+      &::after {
+        // Setting the background color to a semi-transparent white
+        background-color: rgba(255, 255, 255, 0.9);
+        // Setting the border radius to 100% for a circular pseudo-element
+        border-radius: 100%;
+        // Setting the content to an empty string
+        content: "";
+        // Setting the height to 0.25rem
+        height: 0.25rem;
+        // Setting the width to 0.25rem
+        width: 0.25rem;
+      }
+
+      // Styling for the centre button
+      &--centre {
+        // Background gradient from dark grey to medium grey
+        background: linear-gradient(180deg, rgba(24, 24, 24, 1) 0%, rgba(63, 63, 63, 1) 80%);
+        // Setting the border to a solid style with a width of 0.0175rem and a color of dark grey
+        border: solid 0.0175rem rgb(30, 30, 30);
+        // Setting the border radius to 100% for a circular button
+        border-radius: 100%;
+        // Setting the height to 6.4rem
+        height: 6.4rem;
+        // Positioning the button 2.05rem from the left
+        left: 2.05rem;
+        // Positioning the button absolute to its nearest positioned ancestor
+        position: absolute;
+        // Positioning the button 2.05rem from the top
+        top: 2.05rem;
+        // Setting the width to 6.4rem
+        width: 6.4rem;
+        // Setting the stack order of the button to 10
+        z-index: 10;
+
+        // Unsetting the content for the after pseudo-element
+        &::after {
+          content: unset;
+        }
+
+        // Styling for the active state of the centre button
+        &:active {
+          // Changing the background to a linear gradient from dark grey to medium grey when active
+          background: linear-gradient(180deg, rgba(24, 24, 24, 1) 10%, rgba(63, 63, 63, 1) 90%);
+          // Changing the border color to a darker grey when active
+          border-color: rgb(10, 10, 10);
+        }
+      }
+    }
+  }
+
+  // Styling for the buttons of the remote
+  &__buttons {
+    // Mixin to unset button properties
+    @include unset-button-properties;
+    // Displaying the content as a grid
+    display: grid;
+    // Setting the gap between grid items to 1rem
+    gap: 1rem;
+    // Setting the grid to two columns and three rows
+    grid-template: repeat(3,1fr) / repeat(2,1fr)  ;
+
+    // Styling for the remote button
+    .remote-button {
+      // Background gradient from grey to black
+      background: linear-gradient(0deg, rgba(56, 56, 56, 1) 0%, rgba(19, 19, 19, 1) 100%);
+      // Setting the border to an outset style with a width of 0.0175rem and a color of light grey
+      border: outset 0.0175rem rgba(255, 255, 255, 0.6);
+      // Setting the border radius to 400px for a circular button
+      border-radius: 400px;
+      // Setting the height to 4rem
+      height: 4rem;
+      // Unsetting the margin
+      margin: unset;
+      // Unsetting the padding
+      padding: unset;
+      // Setting the width to 4rem
+      width: 4rem;
+
+      // Styling for the image in the button
+      img {
+        // Setting the height to 35% of its parent
+        height: 35%;
+        // Centering the image
+        margin: auto;
+        // Setting the width to 35% of its parent
+        width: 35%;
+      }
+
+      // Styling for the play-pause button
+      &--play-pause {
+        // Positioning the button in the second column
+        grid-column: 1;
+        // Positioning the button in the second row
+        grid-row: 2;
+      }
+
+      // Styling for the active state of the buttons
+      &:active {
+        // Changing the background to a gradient from grey to black when active
+        background: linear-gradient(0, rgba(56, 56, 56, 1) 0%, rgba(19, 19, 19, 1) 60%);
+
+        img{
+          // Changing the opacity of the image to 0.9 when active
+          opacity: 0.9;
+        }
+      }
+
+      // Styling for the volume button
+      &--volume {
+        // Mixin to display flex in column
+        @include display-flex-column;
+        // Positioning the button in the second column
+        grid-column: 2;
+        // Positioning the button in the second and third rows
+        grid-row: 2 / 4;
+        // Setting the height to 100% of its parent
+        height: 100%;
+        // Hiding the overflow content
+        overflow: hidden;
+
+        // Distributing the items evenly along the vertical axis
+        justify-content: space-between;
+
+        // Styling for the active state of the volume button
+        &:active {
+          // Changing the background to a gradient from grey to black when active
+          background: linear-gradient(0deg, rgba(56, 56, 56, 1) 0%, rgba(19, 19, 19, 1) 100%);
+        }
+
+        // Styling for the button inside the volume button
+        >button {
+          // Setting the background color to transparent
+          background: transparent;
+          // Removing the border
+          border: none;
+          // Positioning the button in the second column
+          grid-column: 2;
+
+          // Styling for the image in the button
+          img {
+            // Setting the width to 29% of its parent
+            width: 29%;
+          }
+        }
+
+        // Styling for the active state of the plus button
+        .remote-button--plus:active {
+          // Changing the background to a gradient from transparent to semi-transparent black when active
+          background: linear-gradient(0, rgba(19, 19, 19, 0) 0%, rgba(19, 19, 19, 0.9) 75%);
+        }
+
+        // Styling for the active state of the minus button
+        .remote-button--minus:active {
+          // Changing the background to a gradient from transparent to semi-transparent grey when active
+          background: linear-gradient(180deg, rgba(40, 40, 40, 0) 0%, rgba(45, 45, 45, 0.9) 75%);
+        }
+      }
+    }
+  }
+}

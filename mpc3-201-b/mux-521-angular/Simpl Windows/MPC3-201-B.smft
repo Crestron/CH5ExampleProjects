@@ -1,0 +1,7 @@
+<Device Model="4-Series Ethernet Control System" Name="Ethernet-Only 4-series">
+   <Network Type="Ethernet" Id="01">
+      <Device Model="TS-1070" DeviceId="03"/>
+      <Device Model="XPanel 3.0 Crestron HTML5" DeviceId="04"/>
+      <Device Model="Crestron One" DeviceId="05"/>
+   </Network>
+</Device>
