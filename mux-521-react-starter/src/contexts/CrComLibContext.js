@@ -1,7 +1,9 @@
+/* global CrComLib */
+
 import React from 'react';
 
 // Import the Crestron Com Lib
-import { CrComLib } from '@crestron/ch5-crcomlib';
+// import { CrComLib } from '@crestron/ch5-crcomlib';
 
 //Attach methods to window when component mounts
 window.CrComLib = CrComLib;
